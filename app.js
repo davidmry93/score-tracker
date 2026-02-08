@@ -127,6 +127,9 @@ game.rounds.forEach((round, r) => {
     <td class="border px-2 py-1">
       <input
         type="number"
+         inputmode="numeric"
+  step="1"
+  pattern="[0-9]*"
         value="${s}"
         onchange="updateScore(${r},${p},this.value)"
         class="w-20 text-center border border-gray-300 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400">

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Score Tracker</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+<div class="max-w-6xl mx-auto p-4 space-y-4">
+
+  <!-- Header -->
+  <h1 class="text-3xl font-bold text-gray-800 flex items-center gap-2">
+    🎯 Score Tracker
+  </h1>
+
+  <!-- Game controls -->
+  <div class="bg-white rounded-2xl shadow p-4 flex flex-col sm:flex-row gap-3 sm:items-center">
+    <button 
+      class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition"
+      onclick="newGame()">
+      Nouvelle partie
+    </button>
+
+    <select 
+      id="gameSelect"
+      class="border border-gray-300 rounded-xl px-3 py-2 w-full sm:w-auto"
+      onchange="selectGame()">
+    </select>
+  </div>
+
+  <!-- Player controls -->
+  <div class="bg-white rounded-2xl shadow p-4 flex flex-col sm:flex-row gap-3">
+    <input 
+      id="playerName"
+      class="player-control border border-gray-300 rounded-xl px-3 py-2 flex-1"
+      placeholder="Nom joueur">
+
+    <button 
+      class="player-control bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl transition"
+      onclick="addPlayer()">
+      Ajouter joueur
+    </button>
+
+    <button 
+      class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-xl transition"
+      onclick="addRound()">
+      Nouveau tour
+    </button>
+  </div>
+
+  <!-- Table -->
+  <div class="bg-white rounded-2xl shadow p-4">
+    <div class="overflow-x-auto">
+      <table 
+        id="table"
+        class="min-w-full border border-gray-200 rounded-xl overflow-hidden text-sm text-center">
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
